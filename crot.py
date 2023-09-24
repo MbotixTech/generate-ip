@@ -2,34 +2,34 @@ import random
 import threading
 import re
 
-num_ips = int(input("How much IP addresses to generate: "))
-num_threads = int(input("Enter threads: "))
+gash = int(input("How much IP addresses to generate: "))
+lmao = int(input("Enter threads: "))
 
-generated_ips = []
-valid_ips = []
+shada = []
+humaira = []
 
 def crot(ip):
     pattern = re.compile(r'^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$')
     return bool(pattern.match(ip))
 
 def jemboed():
-    while len(generated_ips) < num_ips:
+    while len(shada) < gash:
         ip_1 = random.randint(0, 255)
         ip_2 = random.randint(0, 255)
         ip_3 = random.randint(0, 255)
         ip_4 = random.randint(0, 255)
         ip = f"{ip_1}.{ip_2}.{ip_3}.{ip_4}"
-        generated_ips.append(ip)
+        shada.append(ip)
 
 def asukabeh():
     while True:
-        if generated_ips:
-            ip = generated_ips.pop()
+        if shada:
+            ip = shada.pop()
             if crot(ip):
-                valid_ips.append(ip)
+                humaira.append(ip)
                 with open("crot.txt", "a") as file:
                     file.write(ip + "\n")
-            if len(valid_ips) >= num_ips:
+            if len(humaira) >= gash:
                 break
 
 generate_thread = threading.Thread(target=jemboed)
